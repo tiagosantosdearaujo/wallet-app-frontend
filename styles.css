@@ -4,4 +4,173 @@ body {
   padding: 0px;
   margin: 0px;
   font-family: "Noto Sans", sans-serif;
+  color: #010400;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 54px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33px;
+  margin: 0px;
+  padding: 0px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  margin: 0px;
+  padding: 0px;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #7c7c7c;
+
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  color: #7c7c7c;
+
+  margin: 0px;
+  padding: 0px;
+}
+
+label {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+a {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+  text-decoration: underline;
+  color: #010400;
+}
+
+button {
+  width: 432px;
+  height: 56px;
+
+  border-radius: 12px;
+  border-color: #5936cd;
+  border-width: 2px;
+  border-style: solid;
+  background-color: #5936cd;
+
+  color: #f4f4f9;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+button.small {
+  width: 90px;
+  height: 36px;
+
+  border-radius: 8px;
+  background-color: #f4f4f9;
+
+  color: #010400;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  height: 48px;
+  border-color: #06bee1;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+
+  color: #010400;
+  font-size: 16px;
+
+  box-sizing: border-box;
+  padding: 6px;
+
+  background-color: #f4f4f9;
+}
+
+.full-width {
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+
+.mt {
+  margin-top: 16px;
+}
+.mt.smaller {
+  margin-top: 6px;
+}
+.mt.small {
+  margin-top: 12px;
+}
+.mt.large {
+  margin-top: 24px;
+}
+.mt.larger {
+  margin-top: 32px;
+}
+
+.logo {
+  width: 88px;
+  height: auto;
+}
+.header-container {
+  width: 100%;
+  height: 10vh;
+  box-sizing: border-box;
+  padding: 1% 7.78% 1% 7.78%;
+  background-color: #ffffff;
+}
+
+.auth-container {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5936cd;
+}
+
+.auth-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 480px;
+  height: auto;
+  min-height: 440px;
+  border-radius: 24px;
+  background-color: #f4f4f9;
+}
+
+.auth-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
 }
