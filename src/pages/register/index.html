@@ -23,23 +23,33 @@
             Insira seu nome e seu e-mail para ter acesso ao Wallet app e
             gerenciar suas finanças
           </p>
-          <label class="mt" for="input-name">Nome</label>
-          <input
-            placeholder="Ex: Tiago Araujo"
-            class="mt smaller"
-            id="input-name"
-            name="input-name"
-            type="text"
-          />
-          <label class="mt" for="input-email">E-mail</label>
-          <input
-            placeholder="email@exemplo.com"
-            class="mt smaller"
-            id="input-email"
-            name="input-email"
-            type="email"
-          />
-          <button onclick="" class="full-width mt larger">Cadastrar</button>
+          <form id="form-register" class="full-width">
+            <div class="mt">
+              <label class="mt" for="input-name">Nome</label>
+              <input
+                placeholder="Insira seu Nome"
+                class="mt smaller"
+                id="input-name"
+                name="input-name"
+                type="text"
+                required
+              />
+            </div>
+            <div class="mt">
+              <label class="mt" for="input-email">E-mail</label>
+              <input
+                placeholder="email@exemplo.com"
+                class="mt smaller"
+                id="input-email"
+                name="input-email"
+                type="email"
+                required
+              />
+            </div>
+            <button onclick="" type="submit" class="full-width mt larger">
+              Cadastrar
+            </button>
+          </form>
           <a class="mt larger" href="../../../index.html"
             >Já possui uma conta ? Faça o seu login</a
           >
