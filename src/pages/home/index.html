@@ -39,7 +39,7 @@
         <div class="table-content-container">
           <div class="table-content-header">
             <h2>Últimos lançamentos</h2>
-            <button class="small">Adicionar</button>
+            <button onclick="onOpenModal()" class="small">Adicionar</button>
           </div>
           <table id="finances-table">
             <tr>
@@ -50,6 +50,62 @@
               <th class="right">Ação</th>
             </tr>
           </table>
+        </div>
+      </div>
+      <div id="modal" class="modal-background">
+        <div class="modal-content">
+          <div class="modal-content-header">
+            <h3>Adicionar lançamento</h3>
+            <button onclick="onCloseModal()" class="small">Fechar</button>
+          </div>
+          <form id="form-finance-release" class="full-width">
+            <div class="mt">
+              <label class="mt" for="input-title">Título</label>
+              <input
+                placeholder="Ex: Compra supermercado"
+                class="mt smaller"
+                id="input-title"
+                name="input-title"
+                type="text"
+                required
+              />
+            </div>
+            <div class="mt">
+              <label class="mt" for="input-value">Valor</label>
+              <input
+                placeholder="R$ 48.00"
+                class="mt smaller"
+                id="input-value"
+                name="input-value"
+                type="number"
+                step="any"
+                required
+              />
+            </div>
+            <div class="mt">
+              <label class="mt" for="input-date">Data</label>
+              <input
+                placeholder="12/12/2022"
+                class="mt smaller"
+                id="input-date"
+                name="input-date"
+                type="date"
+                required
+              />
+            </div>
+            <div class="mt">
+              <label class="mt" for="input-category">Categoria</label>
+              <select
+                class="mt smaller"
+                id="input-category"
+                name="input-category"
+                required
+              ></select>
+            </div>
+            <button onclick="" type="submit" class="full-width mt larger">
+              Adicionar
+            </button>
+          </form>
         </div>
       </div>
     </div>

@@ -158,7 +158,93 @@ const onLoaduserInfo = () => {
   navbaruserAvatar.appendChild(nameElement);
 };
 
+const onOpenModal = () => {
+  const modal = document.getElementById("modal");
+  modal.style.display = "flex";
+};
+
+const onLoadCategories = async () => {
+  try {
+    const categoriesSelect = document.getElementById("input-category");
+    const response = await fetch(
+      "https://mp-wallet-app-api.herokuapp.com/categories"
+    );
+    const categoriesResult = await response.json();
+    categoriesResult.map((category) => {
+      const option = document.createElement("option");
+      const categoryText = document.createTextNode(category.name);
+      option.id = `category_${category.id}`;
+      option.value = category.id;
+      option.appendChild(categoryText);
+      categoriesSelect.append(option);
+    });
+  } catch (error) {
+    return { error };
+  }
+};
+
+const onCloseModal = () => {
+  const modal = document.getElementById("modal");
+  modal.style.display = "none";
+};
+
+const onCallAddFinance = async (data) => {
+  try {
+    const email = localStorage.getItem("@WalletApp:userEmail");
+
+    const response = await fetch(
+      "https://mp-wallet-app-api.herokuapp.com/finances",
+      {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+          email: email,
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    const user = await response.json();
+    return user;
+  } catch (error) {
+    return { error };
+  }
+};
+
+const onCreateFinanceRelease = async (target) => {
+  try {
+    const title = target[0].value;
+    const value = Number(target[1].value);
+    const date = target[2].value;
+    const category = Number(target[3].value);
+    const result = await onCallAddFinance({
+      title,
+      value,
+      date,
+      category_id: category,
+    });
+
+    if (result.error) {
+      return { error };
+    }
+    onCloseModal();
+    window.location.reload(true);
+  } catch (error) {
+    return { error };
+  }
+};
+
 window.onload = () => {
   onLoaduserInfo();
   onLoadFinancesData();
+  onLoadCategories();
+
+  const form = document.getElementById("form-finance-release");
+  form.onsubmit = (event) => {
+    event.preventDefault();
+    onCreateFinanceRelease(event.target);
+  };
 };
