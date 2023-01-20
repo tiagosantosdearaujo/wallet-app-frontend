@@ -1,3 +1,18 @@
+const onDeleteItem = async (id) => {
+  try {
+    const email = localStorage.getItem("@WalletApp:userEmail");
+    await fetch(`https://mp-wallet-app-api.herokuapp.com/finances/${id}`, {
+      method: "DELETE",
+      headers: {
+        email: email,
+      },
+    });
+    window.location.reload(true);
+  } catch (error) {
+    return { error };
+  }
+};
+
 const renderFinancesList = (data) => {
   const table = document.getElementById("finances-table");
   data.map((item) => {
@@ -38,6 +53,8 @@ const renderFinancesList = (data) => {
 
     //delete
     const deleteTd = document.createElement("td");
+    deleteTd.onclick = () => onDeleteItem(item.id);
+    deleteTd.style.cursor = "pointer";
     deleteTd.className = "right";
     const deleteText = document.createTextNode("Deletar");
     deleteTd.appendChild(deleteText);
@@ -176,7 +193,7 @@ const onLoadCategories = async () => {
       option.id = `category_${category.id}`;
       option.value = category.id;
       option.appendChild(categoryText);
-      categoriesSelect.append(option);
+      categoriesSelect.appendChild(option);
     });
   } catch (error) {
     return { error };
