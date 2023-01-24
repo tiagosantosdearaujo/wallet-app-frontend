@@ -23,8 +23,12 @@ const onClickLogin = async () => {
     alert("Falha ao validar o e-mail");
     return;
   }
+  const nowDate = new Date().toISOString().split("T")[0];
   localStorage.setItem("@WalletApp:userEmail", result.email);
   localStorage.setItem("@WalletApp:userName", result.name);
   localStorage.setItem("@WalletApp:userId", result.id);
+  //Sempre que o user logar aparece salva a data atual no localStorage.
+  //Util para alimentar a data atual na pagina home.
+  localStorage.setItem("@WalletApp:userDate", nowDate);
   window.open("./src/pages/home/index.html", "_self");
 };

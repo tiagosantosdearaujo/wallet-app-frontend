@@ -1,3 +1,10 @@
+// my user: tiago.teste@teste.com
+
+Onlogout = () => {
+  localStorage.clear();
+  window.open("../../../index.html", "_self");
+};
+
 const onDeleteItem = async (id) => {
   try {
     const email = localStorage.getItem("@WalletApp:userEmail");
@@ -126,7 +133,8 @@ const renderFinanceElements = (data) => {
 
 const onLoadFinancesData = async () => {
   try {
-    const date = "2022-12-15";
+    const date = localStorage.getItem("@WalletApp:userDate");
+
     const email = localStorage.getItem("@WalletApp:userEmail");
     const result = await fetch(
       `https://mp-wallet-app-api.herokuapp.com/finances?date=${date}`,
@@ -138,7 +146,6 @@ const onLoadFinancesData = async () => {
       }
     );
     const data = await result.json();
-    console.log(data);
     renderFinanceElements(data);
     renderFinancesList(data);
     return data;
@@ -162,8 +169,9 @@ const onLoaduserInfo = () => {
 
   // add logout link
   const logoutElement = document.createElement("a");
+  logoutElement.onclick = () => Onlogout();
+  logoutElement.style.cursor = "pointer";
   const logoutText = document.createTextNode("sair");
-
   logoutElement.appendChild(logoutText);
   navbarUserInfo.appendChild(logoutElement);
 
@@ -254,7 +262,22 @@ const onCreateFinanceRelease = async (target) => {
   }
 };
 
+const setInitialDate = () => {
+  const dateInput = document.getElementById("select-date");
+  const dateUser = localStorage.getItem("@WalletApp:userDate");
+  dateInput.value = dateUser;
+  // recurso para nao ultilizar a funcao onLoadFinancesData()
+  // Toda vez que o usuario alterar a data do input e salvo no LocalStorage.
+  dateInput.addEventListener("change", () => {
+    const lastDateUser = document.getElementById("select-date").value;
+    localStorage.setItem("@WalletApp:userDate", lastDateUser);
+    window.location.reload(true);
+    console.log(teste);
+  });
+};
+
 window.onload = () => {
+  setInitialDate();
   onLoaduserInfo();
   onLoadFinancesData();
   onLoadCategories();
