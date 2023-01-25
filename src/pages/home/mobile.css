@@ -25,9 +25,12 @@
     font-size: 0.75rem;
   }
 
+  button.small {
+    margin-top: 5px;
+  }
+
   table {
     display: flex;
-    /* justify-content: space-around; */
     overflow-y: hidden;
     overflow-x: scroll;
   }
@@ -96,7 +99,8 @@
     display: flex;
     justify-content: space-around;
   }
-  button.small {
-    margin-top: 5px;
+
+  .modal-content {
+    width: 320px;
   }
 }
