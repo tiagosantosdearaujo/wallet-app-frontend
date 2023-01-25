@@ -1,0 +1,102 @@
+@media screen and (max-device-width: 1023px) {
+  .navbar {
+    padding: 24px;
+  }
+
+  .finance-card-container {
+    padding: 24px;
+  }
+
+  .table-container {
+    padding: 24px;
+  }
+}
+
+@media screen and (max-device-width: 425px) {
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 0.75rem;
+  }
+
+  table {
+    display: flex;
+    /* justify-content: space-around; */
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+
+  th {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    margin-right: 10px;
+  }
+
+  th.center {
+    text-align: left;
+  }
+  th.right {
+    text-align: left;
+  }
+
+  td {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 16px;
+  }
+
+  td.center {
+    text-align: left;
+  }
+
+  td.right {
+    text-align: left;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+  .logo-navbar {
+    width: 130px;
+  }
+  .navbar-calendar-container {
+    width: 130px;
+  }
+
+  .navbar-user-container {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .finance-card {
+    width: 49%;
+    margin-top: 0px;
+    margin-bottom: 12px;
+  }
+
+  .table-content-container {
+    padding: 5px;
+  }
+  .table-content-header {
+    flex-direction: column;
+    padding-bottom: 8px;
+  }
+  .finances-table {
+    display: flex;
+    justify-content: space-around;
+  }
+  button.small {
+    margin-top: 5px;
+  }
+}

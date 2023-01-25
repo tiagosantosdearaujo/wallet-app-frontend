@@ -100,6 +100,7 @@ const renderFinanceElements = (data) => {
   );
   const revenueTextElement = document.createElement("h1");
   revenueTextElement.className = "mt smaller";
+  revenueTextElement.style.color = "#008000";
   revenueTextElement.appendChild(revenueText);
   financeCard2.appendChild(revenueTextElement);
 
@@ -113,6 +114,7 @@ const renderFinanceElements = (data) => {
   );
   const expenseTextElement = document.createElement("h1");
   expenseTextElement.className = "mt smaller";
+  expenseTextElement.style.color = "#FF0000";
   expenseTextElement.appendChild(expenseText);
   financeCard3.appendChild(expenseTextElement);
 
@@ -126,7 +128,11 @@ const renderFinanceElements = (data) => {
   );
   const balanceTextElement = document.createElement("h1");
   balanceTextElement.className = "mt smaller";
-  balanceTextElement.style.color = "#5936CD";
+  if (balance > 0) {
+    balanceTextElement.style.color = "#008000";
+  } else {
+    balanceTextElement.style.color = "#FF0000";
+  }
   balanceTextElement.appendChild(balanceText);
   financeCard4.appendChild(balanceTextElement);
 };

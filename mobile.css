@@ -1,0 +1,23 @@
+@media screen and (max-device-width: 426px) {
+  header {
+    display: none;
+  }
+
+  .auth-container {
+    height: 100vh;
+  }
+
+  .auth-content {
+    width: 93.75%;
+    height: auto;
+    max-height: 95.83%;
+  }
+
+  .auth-content-container {
+    padding: 8px;
+  }
+
+  .mt.larger {
+    margin-top: 16px;
+  }
+}
