@@ -6,7 +6,9 @@ This is an finances management dashboard made with JavaScript, HTML and CSS. The
 
 ## Live Link
 
-https://github.com/tiagosantosdearaujo/wallet-app-frontend
+page:https://tiagosantosdearaujo.github.io/wallet-app-frontend/index.html
+
+repo: https://github.com/tiagosantosdearaujo/wallet-app-frontend
 
 ## Technologies used:
 
