@@ -189,9 +189,19 @@ const onLoaduserInfo = () => {
   navbaruserAvatar.appendChild(nameElement);
 };
 
-const onOpenModal = () => {
+const onOpenModalRevenue = () => {
   const modal = document.getElementById("modal");
   modal.style.display = "flex";
+  const addExpense = document.getElementById("input-value");
+  addExpense.max = "none";
+  addExpense.min = "0";
+};
+const onOpenModalExpense = () => {
+  const modal = document.getElementById("modal");
+  modal.style.display = "flex";
+  const addExpense = document.getElementById("input-value");
+  addExpense.max = "0";
+  addExpense.min = "none";
 };
 
 const onLoadCategories = async () => {

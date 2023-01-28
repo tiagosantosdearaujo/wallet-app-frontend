@@ -43,7 +43,14 @@
         <div class="table-content-container">
           <div class="table-content-header">
             <h2>Últimos lançamentos</h2>
-            <button onclick="onOpenModal()" class="small">Adicionar</button>
+            <div>
+              <button onclick="onOpenModalRevenue()" class="small">
+                Receita
+              </button>
+              <button onclick="onOpenModalExpense()" class="small">
+                Despesa
+              </button>
+            </div>
           </div>
           <table id="finances-table">
             <tr>
@@ -77,7 +84,7 @@
             <div class="mt">
               <label class="mt" for="input-value">Valor</label>
               <input
-                placeholder="R$ 48.00"
+                placeholder="-R$ 48.00"
                 class="mt smaller"
                 id="input-value"
                 name="input-value"
